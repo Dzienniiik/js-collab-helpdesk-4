@@ -56,6 +56,6 @@ async function loadMeasurements(url) {
 
 ### Dodatkowe źródła
 
-- [korzystanie z asynchronicznych callbacków]([https://www.w3schools.com/js/js_async_callbacks.asp)
+- [korzystanie z asynchronicznych callbacków](https://www.w3schools.com/js/js_async_callbacks.asp)
 - [async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 - [Promise](https://www.w3schools.com/js/js_async_promises.asp)
