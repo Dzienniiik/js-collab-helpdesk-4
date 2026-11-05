@@ -14,7 +14,7 @@ export function addTicket(title,priority ) {
         throw new Error("ID musi mieć od 1 do 100 znaków")
     return { id: idS, title, priority, status: "new"}   
 }
-export function updateTicket(tickets, id, status) {
+export function updateTicket(tickets, id, status) { 
     return tickets.map(t =>(t.id === id) ? {...t, status} : t); 
 }
 export function filterTicket(tickets, status) {
