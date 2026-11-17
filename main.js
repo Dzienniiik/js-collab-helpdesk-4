@@ -21,6 +21,12 @@ if(text) {
     tickets = JSON.parse(text)
     
 }
+
+function setAsLocked(){
+    // tutaj do zrobienia reszta inputow, ale chyba lepiej bedzie to zrobic troche lepiej niz nazywac 
+    // po koleji kazdy input i ustawianie disabled na true xd...
+    importBtn.disabled = true;
+}
 // do zrobienia : sprawdzanie danych z pliku aka walidacja
 // blokowanie na czas importu
 // CALY import z async  
