@@ -9,7 +9,21 @@ const titleInput = document.querySelector(".helpdeskTitle")
 const prioritySelect = document.querySelector(".helpdeskPriority")
 const filterSelect = document.querySelector(".helpdeskFilter")
 const list = document.querySelector(".helpdeskList")
+const importBtn = document.querySelector(".helpdeskImport") 
 
+function saveTickets(){
+    localStorage.setItem("tickets", JSON.stringify(tickets))
+}
+
+function loadTickets() {
+const text = localStorage.getItem("tickets")
+if(text) {
+    tickets = JSON.parse(text)
+    
+}
+// do zrobienia : sprawdzanie danych z pliku aka walidacja
+// blokowanie na czas importu
+// CALY import z async  
 function rerender() {
     renderTickets(list, filterTicket(tickets, currentFilter))
 }
