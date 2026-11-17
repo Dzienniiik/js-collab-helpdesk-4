@@ -1,3 +1,5 @@
+# JS COLLAB HELPDESK 3 - JAKUB G, JAKUB D, ARTUR
+
 # TESTY 
 
 # TYTULY DLUGOSCI - 2 / 3 / 80 / 81
@@ -26,3 +28,8 @@ Odswiezanie powoduje zresetowanie aplikacji 0 (Usuwa wczesniej dodane tickety.)
 
 # 1000/1001 ZGLOSZEN W PROBIE DOMENY
 W programie mozna umiescic maksymalnie 1000 ticketow. Przekroczenie tej ilosci powoduje wyskoczenie bledu.
+
+
+## JS COLLAB HELPDESK 4 - ARTUR, MATEUSZ, JAKUB
+
+do zrobienia...
