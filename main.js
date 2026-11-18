@@ -100,6 +100,10 @@ form.addEventListener("submit", e => {
         tickets = [...tickets, addTicket(titleInput.value, prioritySelect.value)]
         saveTickets()
         form.reset()
+        
+        currentFilter = 'all'
+        filterSelect.value = 'all'
+        
         rerender()
     } catch (err) {
         alert(err.message)
