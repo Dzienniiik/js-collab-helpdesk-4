@@ -63,7 +63,7 @@ async function startImport(getText) {
         saveTickets()
         rerender()
     } catch (err) {
-        // przy błędzie tickets zostają bez zmian
+       
         alert("Błąd importu: " + err.message)
     } finally {
         isImporting = false

@@ -83,11 +83,9 @@ select:disabled {
     margin-bottom: 8px;
 }
 
-/* Przycisk czyszczenia ticketów */
+
 .helpdeskClear {
-    
     background: #dc2626;
-    
 }
 
 .helpdeskClear:hover {
