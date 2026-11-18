@@ -1,5 +1,5 @@
 import { renderTickets } from './render.js'
-import { addTicket, updateTicket, filterTicket, resetId, importJSON } from './tickets.js'
+    import { addTicket, updateTicket, filterTicket, resetId, importJSON, clearTickets } from './tickets.js'
 
 let tickets = []
 let currentFilter = 'all'
@@ -12,7 +12,9 @@ const filterSelect = document.querySelector(".helpdeskFilter")
 const list = document.querySelector(".helpdeskList")
 const importBtn = document.querySelector(".helpdeskImport")
 const fileInput = document.querySelector(".helpdeskFile")
+const clearBtn = document.querySelector(".helpdeskClear")
 
+clearBtn.addEventListener("click", clearAllTickets)
 function saveTickets() {
     localStorage.setItem("tickets", JSON.stringify(tickets))
 }
@@ -28,7 +30,7 @@ function loadTickets() {
     }
 }
 
-// Blokuje (albo odblokowuje) wszystkie inputy, selecty i przyciski na stronie
+// no to ogolnie blokuje te inputy musze sie poduczyc dokladnie tego zapisu.
 function setLocked(locked) {
     const elements = document.querySelectorAll("input, select, button")
     for (const el of elements) {
@@ -53,8 +55,8 @@ async function startImport(getText) {
             throw new Error("Zle dane importu.")
         }
 
-        const ok = confirm("Zastąpić obecną listę (" + tickets.length + ") zgłoszeniami z importu (" + data.length + ")?")
-        if (!ok) return
+        // const ok = confirm("Zastąpić obecną listę (" + tickets.length + ") zgłoszeniami z importu (" + data.length + ")?")
+        // if (!ok) return
 
         tickets = data
         resetId(tickets)
@@ -77,9 +79,9 @@ async function getTextFromServer() {
     return await response.text()
 }
 
-importBtn.addEventListener("click", () => {
-    startImport(getTextFromServer)
-})
+// importBtn.addEventListener("click", () => {
+//     startImport(getTextFromServer)
+// })
 
 fileInput.addEventListener("change", () => {
     const file = fileInput.files[0]
@@ -117,7 +119,16 @@ filterSelect.addEventListener("change", e => {
     rerender()
 })
 
+function clearAllTickets() {
+    if(isImporting) return
+    tickets = clearTickets()
+    saveTickets()
+    rerender()
+}
+
+
 // Start strony
 loadTickets()
 resetId(tickets)
 rerender()
+

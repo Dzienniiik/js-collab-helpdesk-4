@@ -54,3 +54,7 @@ export function importJSON(text) {
     return data
 }
 
+export function clearTickets() {
+    newId = 1
+    return []
+}
